@@ -1,0 +1,176 @@
+body{overflow: none;}
+.cb-slideshow,
+.cb-slideshow:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+.cb-slideshow:after {
+    content: '';
+    background: transparent url(../images/pattern.png) repeat top left;
+}
+.loader.hide{opacity: 0;}
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    overflow: hidden;
+    background: #000;
+    opacity: 1;
+    overflow: hidden;
+    -webkit-transition: opacity 1s ease 0s;
+    transition: opacity 1s ease 0s;
+}
+.loader>span{
+    background-position: center center;
+    background-image: url(http://scontent-a.cdninstagram.com/hphotos-xfp1/t51.2885-15/1390237_286605521537207_1211565289_n.jpg);
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    filter: blur(15px);
+}
+.loader .middle{
+    width: 548px;
+    height: 250px;
+    background: url('../images/logo-juefill.png');
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.fixedLogo{
+    background: url(../images/logo-juefill.png) no-repeat;
+    background-size: cover;
+    width: 328px;
+    height: 150px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+}
+li{
+width: 100%; 
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+li .instaitem{
+    margin: 0; 
+    width: 100%; 
+    height: 100%; 
+    list-style: none;
+    -webkit-transition: -webkit-transform 2s ease 20s, opacity 2s ease 0s;
+    transition: transform 2s ease 20s, opacity 2s ease 0s;
+    -webkit-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+}
+li.active .instaitem{
+    opacity: 1;
+    -webkit-transition-duration: 5s;
+    transition-duration: 5s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: scale(1.2) rotateZ(0);
+    transform: scale(1.2) rotateZ(0);
+    z-index: 0; 
+}
+.cb-slideshow li>span.instaitem img{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 15px solid #fff;
+    box-shadow: 3px 3px 8px #9a9a9a;
+    -webkit-transition: -webkit-transform 2s ease 20s, opacity 2s ease 0s;
+    transition: transform 2s ease 20s, opacity 2s ease 0s;
+    -webkit-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+    max-width: 80%;
+    max-height: 80%;
+}
+.cb-slideshow li.active>span.instaitem img{
+    -webkit-transition-duration: 5s;
+    transition-duration: 5s;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+.cb-slideshow li>span.instaitem>span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    z-index: 0;
+}
+.cb-slideshow li>div {
+    z-index: 1000;
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 100%;
+    text-align: right;
+    opacity: 0;
+    -webkit-animation: titleAnimation 36s linear infinite 0s;
+    -ms-animation: titleAnimation 36s linear infinite 0s;
+    animation: titleAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div h3 {
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-size: 160px;
+    padding: 0 30px;
+    line-height: 120px;
+    color: rgba(169,3,41, 0.8);
+}
+@media (max-width: 600px) {
+    .fixedLogo {
+        background: url(../images/logo-juefill.png) no-repeat;
+        background-size: cover;
+        width: 300px;
+        height: 135px;
+        position: fixed;
+        bottom: 5px;
+        right: 14px;
+        z-index: 1000;
+    }
+    .loader .middle {
+        width: 248px;
+        height: 250px;
+        background: url('../images/logo-juefill.png');
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+}

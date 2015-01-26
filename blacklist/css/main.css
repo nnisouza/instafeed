@@ -1,0 +1,88 @@
+.mobol{
+    width: 320px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.mobol form{
+    height: 100%;
+}
+.mobol form #submit{
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    border: 0 none;
+    background: tomato;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+    outline: 0 none;
+}
+.mobol form #submit:hover{
+    opacity: 0.8;
+}
+
+.mobol form ul#instafeed{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.mobol form ul#instafeed li{
+    list-style: none;
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+.mobol form ul#instafeed li input[type=checkbox]{
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.mobol form ul#instafeed li input[type=checkbox] + label{
+    height: auto;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    top: 0;
+    box-sizing: border-box;
+    border: 0 transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.mobol form ul#instafeed li label img{
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.mobol form ul#instafeed li input[type=checkbox]:checked + label img{
+    -webkit-transition: border 0.3s ease 0s;
+    transition: border 0.3s ease 0s;
+    -webkit-filter: blur(10px);
+}
+.mobol form ul#instafeed li input[type=checkbox]:checked + label{
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border: 3px solid #f95338;
+    box-sizing: border-box;
+} 
