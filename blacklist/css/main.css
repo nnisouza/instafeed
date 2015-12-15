@@ -1,33 +1,43 @@
+body {
+    margin: 0;
+}
 .mobol{
-    width: 320px;
-    height: 480px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 .mobol form{
     height: 100%;
+    padding-top: 50px;
+    display: block;
+    
+}
+.mobol form.dirty {
+    padding-bottom: 75px;
 }
 .mobol form #submit{
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
     width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: -50px;
+    height: 75px;
+    position: fixed;
+    bottom: -75px;
     left: 0;
     border: 0 none;
     background: tomato;
     text-transform: uppercase;
     color: #fff;
-    border-radius: 0 0 10px 10px;
     outline: 0 none;
+    z-index: 100;
 }
-.mobol form #submit:hover{
-    opacity: 0.8;
+.mobol form.dirty #submit{
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+.mobol form.dirty #submit.success{
+    background: #27af27;
 }
 
 .mobol form ul#instafeed{
@@ -35,7 +45,6 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
 }
 .mobol form ul#instafeed li{
     list-style: none;
@@ -65,12 +74,12 @@
     top: 0;
     box-sizing: border-box;
     border: 0 transparent;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    -webkit-transition: border 0.3s ease 0s;
+    transition: border 0.3s ease 0s;
 }
 .mobol form ul#instafeed li label img{
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    -webkit-transition: border 0.3s ease 0s;
+    transition: border 0.3s ease 0s;
     width: 100%;
     height: auto;
     display: block;
@@ -81,8 +90,42 @@
     -webkit-filter: blur(10px);
 }
 .mobol form ul#instafeed li input[type=checkbox]:checked + label{
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+    -webkit-transition: border 0.3s ease 0s;
+    transition: border 0.3s ease 0s;
     border: 3px solid #f95338;
     box-sizing: border-box;
 } 
+.actions {
+    display: table;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.actions>div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.actions button {
+    height: 50px;
+    width: 100%;
+}
+
+#fullscreen {
+    display: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

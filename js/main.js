@@ -25,10 +25,10 @@ $( document ).ready(function() {
                 }, 6000);
             });
             eq = 0;
-            timeoutId = setTimeout(leAnimation, 6000);
-            setTimeout(function(){
-                $('.loader').addClass('hide');
-            }, 6000);
+            //timeoutId = setTimeout(leAnimation, 6000);
+            //setTimeout(function(){
+            //    $('.loader').addClass('hide');
+            //}, 6000);
         }
     });
 
@@ -62,6 +62,4 @@ $( document ).ready(function() {
         }
         setTimeout(leAnimation, 6000);
     }
-
-
 });

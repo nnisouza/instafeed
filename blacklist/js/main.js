@@ -1,5 +1,52 @@
- var eq, howMuch, timeoutId;
+var eq, howMuch, timeoutId;
+var el = document.documentElement,
+    rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+
 $( document ).ready(function() {
+    apply();
+    
+    if(rfs) {
+        $('#fullscreen').show();
+    }
+    
+    $('#fullscreen').click(function() {
+        $(this).hide();
+        rfs.call(el);
+    });
+    
+    $('#reload').click(update);
+    
+    $('form').submit(function(e) {
+        e.preventDefault();
+        var url = $(this).attr('action');
+        var data = $(this).serialize();
+        
+        $('#submit').html('<i class="fa fa-circle-o-notch fa-spin"></i> &nbsp; Salvando...');
+        
+        $.post(url, data, function() {
+            update();
+            
+            $('#submit').addClass('success');
+            $('#submit').html('<i class="fa fa-check"></i> &nbsp; Salvo com sucesso');
+            
+            setTimeout(function() {
+                $('form').removeClass('dirty');
+            }, 800);
+            setTimeout(function() {
+                $('#submit').removeClass('success');
+                $('#submit').html('<i class="fa fa-floppy-o"></i> &nbsp; Salvar alterações');
+            }, 900);
+        });
+    });
+});
+
+function update() {
+    $('#reload').html('<i class="fa fa-refresh fa-spin"></i> &nbsp; Carregando...');
+    $('#instafeed li').remove();
+    apply();
+}
+
+function apply() {
     feed = new Instafeed({
         get: 'tagged',
         tagName: 'formaturaGnz2015',
@@ -19,7 +66,14 @@ $( document ).ready(function() {
                     select.prop('checked', true);
                 }
             });
+            
+            $('input').click(function() {
+                $('form').addClass('dirty');
+            });
+            
+            $('#reload').html('<i class="fa fa-refresh"></i> &nbsp; Atualizar lista');
         }
     });
     feed.run();
-});
+    
+}

@@ -6,17 +6,33 @@
         <title>Blacklist</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     </head>
    
     <body>
         <div class="mobol">
-            <form  action="blacklist.php" method="POST">
-                <ul id="instafeed">
-                </ul>
-                <input type="submit" id="submit" value="bloquear imagens"/>
+            <div class="actions">
+                <div>
+                    <button id="fullscreen">
+                        <i class="fa fa-arrows-alt"></i>
+                        Tela cheia
+                    </button>
+                </div>
+                <div>
+                    <button id="reload">
+                        <i class="fa fa-refresh"></i>
+                        Atualizar lista
+                    </button>
+                </div>
+            </div>
+            <form action="blacklist.php" method="POST" class="clearfix">
+                <ul id="instafeed"></ul>
+                <button type="submit" id="submit">
+                    <i class="fa fa-floppy-o"></i>
+                    Salvar alterações
+                </button>
             </form>
         </div>
-        <p></p>
     </body>
     
     <script type="text/javascript" src="js/jquery.min.js"></script>
