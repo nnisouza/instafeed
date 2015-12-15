@@ -2,7 +2,7 @@
 $( document ).ready(function() {
     feed = new Instafeed({
         get: 'tagged',
-        tagName: 'juefill',
+        tagName: 'formaturaGnz2015',
         userId: 141970,
         accessToken: '141970.467ede5.edbc9c37472d41b790e1db8948793f11',
         sortby: 'least-recent',

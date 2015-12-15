@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 body{overflow: none;}
 .cb-slideshow,
 .cb-slideshow:after {
@@ -28,23 +29,22 @@ body{overflow: none;}
     transition: opacity 1s ease 0s;
 }
 .loader>span{
-    background-position: center center;
-    background-image: url(http://scontent-a.cdninstagram.com/hphotos-xfp1/t51.2885-15/1390237_286605521537207_1211565289_n.jpg);
-    background-size: cover;
+    background: url('../images/texture.png') center center;
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-filter: blur(15px);
-    -moz-filter: blur(15px);
-    filter: blur(15px);
+    -webkit-filter: blur(1.5px);
+    -moz-filter: blur(1.5px);
+    filter: blur(1.5px);
 }
 .loader .middle{
-    width: 548px;
-    height: 250px;
-    background: url('../images/logo-juefill.png');
+    font-family: 'Oswald';
+    width: 553px;
+    height: 136px;
+    color: #fff;
     position: absolute;
     z-index: 10;
     top: 0;
@@ -52,16 +52,16 @@ body{overflow: none;}
     right: 0;
     left: 0;
     margin: auto;
+    font-weight: 700;
+    font-size: 45px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
-.fixedLogo{
-    background: url(../images/logo-juefill.png) no-repeat;
-    background-size: cover;
-    width: 328px;
-    height: 150px;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    z-index: 1000;
+.loader .middle span{
+    font-weight: 700;
+    font-size: 67px;
+    text-transform: none;
+    line-height: 53px;
 }
 li{
 width: 100%; 
